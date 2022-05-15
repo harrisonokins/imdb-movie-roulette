@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     iso8601 (0.13.0)
     json (2.5.1)
     mini_portile2 (2.5.0)
@@ -20,12 +23,14 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    temple (0.8.2)
     tilt (2.0.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
   iso8601
   json
   nokogiri

@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "haml"
 gem "iso8601"
 gem "json"
 gem "open-uri"
