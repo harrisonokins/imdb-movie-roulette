@@ -12,6 +12,8 @@ get '/movie' do
   get_random_movie.to_json
 end
 
+private
+
 def get_random_movie
   id = rand(2..812632)
   url = "https://www.themoviedb.org/movie/#{id}"
