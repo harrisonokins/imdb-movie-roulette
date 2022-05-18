@@ -12,6 +12,11 @@ get '/movie' do
   get_random_movie.to_json
 end
 
+get '/prompt' do
+  @prompt = get_prompt
+  haml :prompt
+end
+
 private
 
 def get_random_movie
@@ -59,4 +64,54 @@ def get_random_movie
   end
 
   { url: url }
+end
+
+def get_prompt
+  free_choice = [true, false].sample
+
+  return {
+    title: "Speak No Evil",
+    description: "A world without rules and controls, without borders or boundaries. A world where anything is possible. Select any movie you please."
+  } if free_choice
+
+  prompts = [
+    {
+      title: "Lineage",
+      description: "Explain this group to a family member, and have them select the next film.",
+    },
+    {
+      title: "Doppelgangers",
+      description: "Select a movie featuring a charactor or actor that shares your name.",
+    },
+    {
+      title: "Travel",
+      description: "Choose a film depicting the last destination you traveled to.",
+    },
+    {
+      title: "Death of the Author",
+      description: "Open a book to a random page. Select your film based on the chapter's title.",
+    },
+    {
+      title: "Hear No Evil",
+      description: "The next film mentioned to you by any person or media.",
+    },
+    {
+      title: "Genesis",
+      description: "Select a film from the same year someone close to you was born.",
+    },
+    {
+      title: "See No Evil",
+      description: "Pick a movie you have not seen starring your favorite actor.",
+    },
+    {
+      title: "Same Same, But Different",
+      description: "The title of the next movie must rhyme with the previous film.",
+    },
+    {
+      title: "Music",
+      description: "Select a movie with a soundtrack that moved you."
+    }
+  ]
+
+  prompts.sample
 end

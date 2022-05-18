@@ -1,0 +1,19 @@
+!!! Strict
+%html
+  %head
+    %meta{ http_equiv: "Content-Type", content: "text/html; charset=utf-8" }
+    %title Movie Prompt
+    %link{ rel: "stylesheet", href: "application.css", type: "text/css", media: "screen, projection" }
+    %link{ rel: "shortcut icon", href: "favicon.png" }
+    %script{ src: "application.js", type: "text/javascript" }
+%body
+  .container
+    #generator
+      %h1{ style: "margin-top: -110px;" }
+        This week's theme...
+        %br
+        %span{ style: "font-size: 50px; display: inline-block; font-weight: bold padding: 0 50px;" }
+          = @prompt[:title]
+        %br
+        %span{ style: "font-size: 30px; display: inline-block; padding: 0 75px" }
+          = @prompt[:description]
